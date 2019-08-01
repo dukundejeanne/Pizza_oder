@@ -16,7 +16,7 @@ h1{
  text-align: center;
  margin-top: 22%;
  /* max-width:960px; */
- text-shadow: 0px 0px 4px;
+ /* text-shadow: 0px 0px 4px; */
  
  display:block;
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -38,7 +38,7 @@ h1{
     left:50%;
     color:black;
     display: inline-block;
-    transform:translate(200%,200%);
+    transform:translate(200%,300%);
     cursor: pointer;
 }
 #button:hover{
@@ -107,4 +107,33 @@ li a{
  }
  h2{
      text-align: center;
+     
  }
+ 
+ .container{
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),url('https://res.cloudinary.com/drrezzrvd/image/upload/v1564657853/photo-3_ec2ylv.jpg');
+    height:500px;
+    width:50%; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color:white;
+     
+}
+label{
+    /* margin-left:60%; */
+    color:white;
+}
+.form-control , .btn{
+    /* margin-left: 70%; */
+    color:white;
+    text-align: center;
+}
+.walrus-showing{
+    display: none;
+}
+footer{
+    height:200px;
+    background-color: gray;
+
+}
