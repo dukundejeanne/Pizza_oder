@@ -80,7 +80,7 @@ ul{
 margin:0px;
 padding: 0%;
 overflow: hidden;
-background-color: orangered;
+/* background-color: orangered; */
 }
 li{
     float:left;
