@@ -112,12 +112,13 @@ li a{
  
  .container{
     background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),url('https://res.cloudinary.com/drrezzrvd/image/upload/v1564657853/photo-3_ec2ylv.jpg');
-    height:500px;
+    height:1000px;
     width:50%; 
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
     color:white;
+    
      
 }
 label{
@@ -127,7 +128,7 @@ label{
 .form-control , .btn{
     /* margin-left: 70%; */
     color:white;
-    text-align: center;
+    /* text-align: center; */
 }
 .walrus-showing{
     display: none;
