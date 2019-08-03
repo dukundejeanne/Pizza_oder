@@ -43,11 +43,23 @@ function Pizza_Order(size,tiza,number,favo,local){
     this.numberPizza=number;
     this.favoritePizza=favo;
     this.locationPizza=local;
-    this.addresses=[];
+    this.orders=[];
 
 }
+function Pizza_Orders(size1,tiza1,number1,favo1,local1){
+    this.sizePizza1=size1;
+    this.typePizza1=tiza1;
+    this.numberPizza1=number1;
+    this.favoritePizza1=favo1;
+    this.locationPizza1=local1;
+
+}
+
 Pizza_Order.prototype.fullOrder=function(){
-    return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza;
+    return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza+" "+this.orders;
+}
+Pizza_Orders.prototype.fullOrders=function(){
+    return this.sizePizza1 + " " + this.typePizza1 + " " +this.numberPizza1+ " " + this.favoritePizza1 + " " +this.locationPizza1;
 }
 // var ada=new Pizza_Order("small", "Italian", "1", "thin" , " rwanda");
 $(document).ready(function(){
@@ -59,8 +71,16 @@ $(document).ready(function(){
         var inputtedFavoritePizza=$("select#new-crust").val();
         var inputtedLocationPizza=$("input#new-location").val();
 
-        var newPizza_Order=new Pizza_Order(inputtedSizePizza,inputtedTypePizza,inputtedNumberPizza,inputtedFavoritePizza,inputtedLocationPizza);
+         var newPizza_Order=new Pizza_Order(inputtedSizePizza,inputtedTypePizza,inputtedNumberPizza,inputtedFavoritePizza,inputtedLocationPizza);
             console.log(newPizza_Order);
+        //      $(".new-pizza").each(function(){
+        //          var inputtedNumberPizza=$(this).find("select.numbers").val();
+        //          var inputtedFavoritePizza=$(this).find("select.new-crust").val();                 
+        //          var newPizza =new Pizza_Orders(inputtedNumberPizza,inputtedFavoritePizza);
+        // newPizza_Order.addresses.push(newPizza)
+        //      });
+
+        // console.log(newPizza);
  $("ul#your").append("<li><span class='contact'>" + newPizza_Order.fullOrder() + "</span></li>");
  $(".contact").last().click(function(){
     $("#show-your-order").show();
@@ -70,10 +90,11 @@ $(document).ready(function(){
     $(".pizza-number").text(newPizza_Order.numberPizza);
     $(".pizza-favor").text(newPizza_Order.favoritePizza);
     $(".pizza-local").text(newPizza_Order.locationPizza);
-    $("ul#addresses").text("");
-    newPizza_Order.addresses.forEach(function(address) {
-      $("ul#addresses").append("<li>" + address.sizePizza + ", " + address.typePizza+ " " + address.numberPizza + "</li>");
-    });
+    // $("ul#addresses").text("");
+    // $(".pizza-local").text(newPizza_Order.locationPizza);
+    // newPizza_Order.addresses.forEach(function(address) {
+    //   $("ul#addresses").append("<li>" + address.numberPizza + ", " + address.favoritePizza+ "</li>");
+    // });
 
 });
     });

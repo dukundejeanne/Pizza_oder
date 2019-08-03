@@ -112,8 +112,8 @@ li a{
  
  .container{
     background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),url('https://res.cloudinary.com/drrezzrvd/image/upload/v1564657853/photo-3_ec2ylv.jpg');
-    height:1000px;
-    width:50%; 
+    height:600px;
+    width:70%; 
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
@@ -136,5 +136,7 @@ label{
 footer{
     height:200px;
     background-color: gray;
-
 }
+/* #show-your-order{
+    display: none;
+} */
