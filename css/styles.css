@@ -112,22 +112,23 @@ li a{
  
  .container{
     background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),url('https://res.cloudinary.com/drrezzrvd/image/upload/v1564657853/photo-3_ec2ylv.jpg');
-    height:600px;
+    height:900px;
     width:70%; 
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    color:white;
+    color:black;
+    font-family: lato;
     
      
 }
 label{
     /* margin-left:60%; */
-    color:white;
+    color:black;
 }
 .form-control , .btn{
     /* margin-left: 70%; */
-    color:white;
+    color:black;
     /* text-align: center; */
 }
 .walrus-showing{

@@ -5,24 +5,14 @@ $(document).ready(function() {
                                 
                                    '<div class="form-group">' +
     
-                                     '<label for="new-number"><strong>Number of Pizza:</strong></label>' +
-                        '<select class="form-control new-number" id="number" value="number" style="background:transparent">' +
-                            '<option value="pizza1" id="pizza1">1</option>' +
-                            '<option value="pizza2" id="pizza2">2</option>' +
-                            '<option value="pizza3" id="pizza3">3</option>' +
-                            '<option value="pizza4" id="pizza4">4</option>' +
-                            '<option value="pizza5" id="pizza5">5</option>' +
-                            '<option value="pizza6" id="pizza6">6</option>' +
-                            '<option value="pizza7" id="pizza7">7</option>' +
-                            '<option value="pizza8" id="pizza8">8</option>' +
-                            '<option value="pizza9" id="pizza9">9</option>' +
-                            '<option value="pizza10" id="pizza10">10</option>' +
-                                    '</select>'+
+                         '<label for="new-number"><strong>Number of Pizza:</strong></label>' +
+                         '<input type="number" id="numbers" class="form-control new-number" style="background:transparent">' +
                                    '</div>' +
-                                   '<div class="form-group">' +
+                                 
                                   
-                                   '<label for="new-crust"><strong>Favorite Crust:</strong></label>' +
-                           '<select class="form-control new-number" id="number" value="number" style="background:transparent">' +
+                         ' <div class="form-group">' +
+                        '<label for="new-crust"><strong>Favorite Crust:</strong></label>' +
+                 '<select class="form-control new-crust" id="new-crust"  style="background:transparent">' +
                                '<option value="Thin" id="crust">Thin Crust</option>' +
                               '<option value="Thick" id="crust">Thick Crust</option>' +
                                '<option value="FatBread" id="crust">FatBread Crust</option>' +
@@ -46,64 +36,82 @@ function Pizza_Order(size,tiza,number,favo,local){
     this.orders=[];
 
 }
-function Pizza_Orders(size1,tiza1,number1,favo1,local1){
-    this.sizePizza1=size1;
-    this.typePizza1=tiza1;
+ function Pizza_Orders(size1,tiza1,number1,favo1,local1){
+    this.sizePizza=size1;
+    this.typePizza=tiza1;
     this.numberPizza1=number1;
     this.favoritePizza1=favo1;
-    this.locationPizza1=local1;
+    this.locationPizza=local1;
+  
 
-}
+ }
 
-Pizza_Order.prototype.fullOrder=function(){
-    return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza+" "+this.orders;
-}
-Pizza_Orders.prototype.fullOrders=function(){
-    return this.sizePizza1 + " " + this.typePizza1 + " " +this.numberPizza1+ " " + this.favoritePizza1 + " " +this.locationPizza1;
-}
+// Pizza_Order.prototype.fullOrder=function(){
+//     return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza+" "+this.orders;
+// }
+Pizza_Orders.prototype.fullOrder=function(){
+    // return this.numberPizza1+ " " + this.favoritePizza1 ;
+    return this.sizePizza + " " + this.typePizza + " " +this.numberPizza1+ " " + this.favoritePizza1 + " " +this.locationPizza;
+ }
 // var ada=new Pizza_Order("small", "Italian", "1", "thin" , " rwanda");
 $(document).ready(function(){
     $("form#new-pizz").submit(function(event){
         event.preventDefault();
         var inputtedSizePizza=$("select#new-size").val();
         var inputtedTypePizza=$("select#type").val();
-        var inputtedNumberPizza=$("select#numbers").val();
+        var inputtedNumberPizza=$("input#numbers").val();
         var inputtedFavoritePizza=$("select#new-crust").val();
         var inputtedLocationPizza=$("input#new-location").val();
 
          var newPizza_Order=new Pizza_Order(inputtedSizePizza,inputtedTypePizza,inputtedNumberPizza,inputtedFavoritePizza,inputtedLocationPizza);
             console.log(newPizza_Order);
-        //      $(".new-pizza").each(function(){
-        //          var inputtedNumberPizza=$(this).find("select.numbers").val();
-        //          var inputtedFavoritePizza=$(this).find("select.new-crust").val();                 
-        //          var newPizza =new Pizza_Orders(inputtedNumberPizza,inputtedFavoritePizza);
-        // newPizza_Order.addresses.push(newPizza)
-        //      });
+              $(".new-pizza").each(function(){
+                var inputtedSizePizza=$("select#new-size").val();
+                var inputtedTypePizza=$("select#type").val();
+                var inputtedNumberPizza=$(this).find("input.new-number").val();
+                var inputtedFavoritePizza=$(this).find("select.new-crust").val(); 
+                var inputtedLocationPizza=$("input#new-location").val(); 
 
-        // console.log(newPizza);
- $("ul#your").append("<li><span class='contact'>" + newPizza_Order.fullOrder() + "</span></li>");
+                var newPizza =new Pizza_Orders(inputtedSizePizza, inputtedTypePizza ,inputtedNumberPizza,inputtedFavoritePizza,inputtedLocationPizza);
+         newPizza_Order.orders.push(newPizza);
+         console.log(newPizza);
+              });
+            
+    newPizza_Order.orders.forEach(function(address) {
+        $("ul#addresses").append("<li>" + address.fullOrder()+ "</li>");
+    });  
+              
+  $("ul#your").append("<li><span class='contact'>" + newPizza_Orders.fullOrder() + "</span></li>");
  $(".contact").last().click(function(){
     $("#show-your-order").show();
-    $("#show-your-order h5").text(newPizza_Order.fullOrder());
+     $("#show-your-order h5").text(newPizza_Order.fullOrder());
     $(".pizza-size").text(newPizza_Order.sizePizza);
     $(".pizza-type").text(newPizza_Order.typePizza);
     $(".pizza-number").text(newPizza_Order.numberPizza);
+    $(".pizza-number1").text(newPizza_Order.numberPizza1);
     $(".pizza-favor").text(newPizza_Order.favoritePizza);
+    $(".pizza-favor1").text(newPizza_Order.favoritePizza1);
+    $("ul#addresses").text(" ");
     $(".pizza-local").text(newPizza_Order.locationPizza);
-    // $("ul#addresses").text("");
-    // $(".pizza-local").text(newPizza_Order.locationPizza);
-    // newPizza_Order.addresses.forEach(function(address) {
-    //   $("ul#addresses").append("<li>" + address.numberPizza + ", " + address.favoritePizza+ "</li>");
-    // });
+  
 
 });
     });
-    $("select#new-size").val();
-    $("select#type").val();
-    $("select#numbers").val();
-    $("select#new-crust").val();
-    $("input#new-location").val();
+    $("select#new-size").val("");
+    $("select#type").val("");
+    $("input.new-number").val();
+    $("select.new-crust").val();
+    $("input#new-location").val("");
+    // $(this).find("input.new-number").val("");
+    // $(this).find("select.new-crust").val("");
 });
+
+
+
+
+
+
+
 
 // $("form#new-pizz").submit(function(event){
 //     event.preventDefault();
@@ -112,11 +120,9 @@ $(document).ready(function(){
 
 // $("form#new-contact").submit(function(event) {
 //     event.preventDefault();
-
 //     var inputtedFirstName = $("input#new-first-name").val();
 //     var inputtedLastName = $("input#new-last-name").val();
 //     var newContact = new Contact(inputtedFirstName, inputtedLastName);
-
 //     $(".new-address").each(function() {
 //       var inputtedStreet = $(this).find("input.new-street").val();
 //       var inputtedCity = $(this).find("input.new-city").val();

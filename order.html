@@ -53,19 +53,7 @@
                                 <div class="new-pizza">
                               <div class="form-group">
                                 <label for="new-number"><strong>Number of Pizza:</strong></label>
-                        <select class="form-control new-number" id="numbers"  style="background:transparent">
-                            <option  id="pizza1">1</option>
-                            <option id="pizza2">2</option>
-                            <option  id="pizza3">3</option>
-                            <option  id="pizza4">4</option>
-                            <option  id="pizza5">5</option>
-                            <option  id="pizza6">6</option>
-                            <option  id="pizza7">7</option>
-                            <option id="pizza8">8</option>
-                            <option  id="pizza9">9</option>
-                            <option  id="pizza10">10</option>
-                                 
-                         </select>
+                            <input type="number" min="1" id="numbers" class="form-control new-number" style="background:transparent">
                         </div>
                         
                         <div class="form-group">
@@ -96,20 +84,30 @@
          <!-- <div class="row"> -->
             <div class="col-md-6">
           
-                 <h3>Your Order</h3>
+                 
                     <ul id="your"></ul>
   
            
                 <div id="show-your-order">
-                    <h4>List of your Order</h4>
+                    <h3>List of your Order</h3>
                     <h5> </h5>
-                    <p><strong>Size of Pizza  :</strong> <span class="pizza-size"></span> </p>
-                    <p><strong>Type of pizza  :</strong><span class="pizza-type"></span></p>
-                    <p><strong>Number of Pizza:</strong><span class="pizza-number"></span></p>
-                    <p><strong>Favorite Crust :</strong><span class="pizza-favor"></span></p>
-                    <p><strong>Your Location  : </strong><span class="pizza-local"></span></p>
-                    <ul id="addresses"></ul>                   
-                </div>
+                    <p><strong><span class="pizza-size"></span></strong></p>
+                    <p><strong><span class="pizza-type"></span></strong></p>
+                    <p><strong><span class="pizza-number"></span></strong></p>
+                    <p><strong><span class="pizza-favor"></span></strong></p>                   
+                    <p><strong><span class="pizza-local"></span> </strong></p>
+                  </div>
+                    
+                  
+                    <div id="show-order"></div>
+                    <h3>Another Order</h3>
+                    <ul id="addresses"></ul> 
+                    <h5> </h5>
+                    
+                    <p><strong></strong><span class="pizza-number1"></span></p>
+                    <p><strong></strong><span class="pizza-favor1"></span></p>   
+                  </div>               
+                
             <!-- </div> -->
           </div>
         </div>     
