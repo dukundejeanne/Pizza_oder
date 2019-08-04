@@ -6,7 +6,7 @@ $(document).ready(function() {
                                    '<div class="form-group">' +
     
                          '<label for="new-number"><strong>Number of Pizza:</strong></label>' +
-                         '<input type="number" id="numbers" class="form-control new-number" style="background:transparent">' +
+                         '<input type="number" min="1" id="numbers" class="form-control new-number" style="background:transparent">' +
                                    '</div>' +
                                  
                                   
@@ -46,15 +46,15 @@ function Pizza_Order(size,tiza,number,favo,local){
 
  }
  Pizza_Order.prototype.fullOrder=function(){
-    return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza+" "+this.orders;
+    return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza;
 }
 
 // Pizza_Order.prototype.fullOrder=function(){
 //     return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza+" "+this.orders;
 // }
 Pizza_Orders.prototype.fullOrder=function(){
-     return this.numberPizza1+ " " + this.favoritePizza1 ;
-    //return this.sizePizza1 + " " + this.typePizza1 + " " +this.numberPizza1+ " " + this.favoritePizza1 + " " +this.locationPizza1;
+    //  return this.numberPizza1+ " " + this.favoritePizza1 ;
+  return this.numberPizza1+ " " + this.favoritePizza1 + " " +this.locationPizza1;
  }
 // var ada=new Pizza_Order("small", "Italian", "1", "thin" , " rwanda");
 $(document).ready(function(){
@@ -69,11 +69,11 @@ $(document).ready(function(){
          var newPizza_Order=new Pizza_Order(inputtedSizePizza,inputtedTypePizza,inputtedNumberPizza,inputtedFavoritePizza,inputtedLocationPizza);
             console.log(newPizza_Order);
               $(".new-pizza").each(function(){
-                var inputtedSizePizza=$("select#new-size").val();
-                var inputtedTypePizza=$("select#type").val();
+                var inputtedSizePizza=$(this).find("select.newsize").val();
+                var inputtedTypePizza=$(this).find("select.newType").val();
                 var inputtedNumberPizza=$(this).find("input.new-number").val();
                 var inputtedFavoritePizza=$(this).find("select.new-crust").val(); 
-                var inputtedLocationPizza=$("input#new-location").val(); 
+                var inputtedLocationPizza=$("input.new-location").val(); 
 
                 var newPizza =new Pizza_Orders(inputtedSizePizza, inputtedTypePizza ,inputtedNumberPizza,inputtedFavoritePizza,inputtedLocationPizza);
          newPizza_Order.orders.push(newPizza);
@@ -91,8 +91,9 @@ $(document).ready(function(){
      $(".pizza-number").text(newPizza_Order.numberPizza);
     // $(".pizza-number1").text(newPizza_Order.numberPizza1);
      //$(".pizza-favor").text(newPizza_Order.favoritePizza);
-     $(".pizza-favor1").text(newPizza_Order.favoritePizza1);
+     $(".pizza-favor").text(newPizza_Order.favoritePizza);
     $(".pizza-local").text(newPizza_Order.locationPizza);
+    
     $("ul#addresses").text(" ");
     newPizza_Order.orders.forEach(function(address) {
         $("ul#addresses").append("<li>" + address.fullOrder()+ "</li>");
@@ -102,12 +103,37 @@ $(document).ready(function(){
     });
     $("select#new-size").val("");
     $("select#type").val("");
-    $("input.new-number").val();
-    $("select.new-crust").val();
+    $("input.new-number").val("");
+    $("select.new-crust").val("");
     $("input#new-location").val("");
    
 });
+// switch(My-order){
+//}
+var total=price * number;
+var price=20;
+var size,type,number,favorite;
+if(size=='small'&& number=='1'){
+    document.getElementById('sale').innerHTML='20$' 
 
+}
+// if(size=='small'&& number=='1'){
+//     document.getElementById('sell').innerHTML='20$' 
+//     if(type=='Italian pizza'){
+//     $document.write("20$");
+
+//     }else if(type=='Vegetable pizza'){
+    
+//     total= price * number;
+//     $document.write("total");
+//     document.getElementById('sale').innerHTML='20$' 
+//     }
+
+// }else if(size == 'large'){
+
+// }else if(size=='medium'){
+
+// }
 
 
 

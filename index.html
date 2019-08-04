@@ -23,9 +23,9 @@
         <div>
             <h1>Pizza  Mia  Restaurant </h1>
         </div>
-        <div clas="button">
+        <!-- <div clas="button">
           <input type="button" value="Order" name="button" class="btn btn-success" id="button" href="#id">
-        </div>
+        </div> -->
 
         
     </header>
@@ -102,7 +102,111 @@
                 </div>
             </sectionC>
     <sectionA>
-        <div id="about">
+
+            <div class="container">
+                    <br>
+                 
+                    <h3>Order your Pizzas</h3>
+                    <br>
+        
+                        <div class="row">
+                            <div class="col-md-6">
+                                               
+                                    <form id="new-pizz">
+                                        
+                                            <!-- <div class="walrus-showing" id="one">   -->
+                                                   
+                                      <div class="form-group">
+                                            
+                                                    <label for="size"><strong>Pizza Size:      </strong></label>
+                                            <select class="form-control newsize" id="new-size" value="size" style="background:transparent">
+                                                <option  id="la">Large</option>
+                                                <option  id="med">Medium</option>
+                                                <option  id="sma">Small</option>
+                                                     
+                                             </select>
+                                     </div>
+                                    <div class="form-group">
+                                            <label for="type-pizza"><strong>Type of pizza :     </strong></label>
+                                    <select class="form-control newType" id="type" value="type" style="background:transparent" >
+                                        <option  id="ita">Italian pizza</option>
+                                        <option  id="veg">Vegetable pizza</option>
+                                        <option  id="ita">Hawaiian pizza</option>
+                                        <option id="veg">Chicken and Mushroom pizza</option>
+                                        <option  id="ita">Regima pizza</option>
+                                        <option  id="veg">Chicken Tikka pizza</option>
+                                             
+                                     </select>
+                                    </div>  
+                                  <!-- <br>   -->
+                                  <div id="new-pizzas">
+                                        <div class="new-pizza">
+                                      <div class="form-group">
+                                        <label for="new-number"><strong>Number of Pizza:</strong></label>
+                                    <input type="number" min="1" id="numbers" class="form-control new-number" style="background:transparent">
+                                </div>
+                                
+                                <div class="form-group">
+                                <label for="new-crust"><strong>Favorite Crust:</strong></label>
+                        <select class="form-control new-crust" id="new-crust"  style="background:transparent">
+                            <option  id="crust">Thin Crust</option>
+                            <option  id="crust">Thick Crust</option>
+                            <option  id="crust">FatBread Crust</option>
+                            <option  id="crust">Custom Crust</option>
+                            
+                                 
+                         </select>
+                        </div>
+                        <br>
+                                <div class="form-group">
+                                        <label for="new-location"><strong>your Location:</strong></label>
+                                    <input id="new-location" class="form-control new-location" type="text" placeholder="Enter your Location" style="background:transparent">
+                                </div>
+                        </div>
+                </div>
+                                <br>
+                                <span class="btn btn-primary" id="add-address">Add another</span>
+                                <button type="submit" class="btn">Add</button>
+                              </form>
+                              </div>
+                            
+                 
+                 <!-- <div class="row"> -->
+                    <div class="col-md-6">
+                  
+                         
+                            <ul id="your"></ul>
+          
+                   
+                        <div id="show-your-order">
+                            <h3>List of your Order</h3>
+                            <h5> </h5>
+                            <p><strong>Size of Pizza :<span class="pizza-size"></span></strong></p>
+                            <p><strong>Type of Pizza :<span class="pizza-type"></span></strong></p>
+                            <p><strong>Number of Pizza:<span class="pizza-number"></span></strong></p>
+                            <p><strong>Favorite  Pizza:<span class="pizza-favor"></span></strong></p>                   
+                            <p><strong>Your Location :<span class="pizza-local"></span> </strong></p>
+                            
+                          </div>
+                            
+                          
+                            <div id="show-order"></div>
+                            <h3 id="sale">Another Order</h3>
+                            <ul id="addresses"></ul> 
+                            <h5> </h5>
+                            
+                            <p><strong></strong><span class="pizza-number1"></span></p>
+                            <p><strong></strong><span class="pizza-favor1"></span></p>   
+                          </div>               
+                        
+                    <!-- </div> -->
+                  </div>
+                </div>     
+            </div>
+
+
+
+        <!-- <div id="about">
             <div class="about">
                 <br>
                 <h2>Welcome to Pizza Mia Restaurant</h2>
@@ -134,7 +238,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
     </sectionA>
     <br>
     <sectionB>
@@ -150,29 +254,29 @@
         </div>
         <div class="col-md-3" id="w2">
             <img id="img1" width="200px" height="200px" src="images/photo-3.jpeg">
-            <div><h8>italian pizza</h8></div>
+            <div><h8>Vegetable pizza</h8></div>
         </div>
         <div class="col-md-3" id="w3">
             <img id="img1" width="200px" height="200px" src="images/photo-8.jpeg">
-            <div><h8>italian pizza</h8></div>
+            <div><h8>Mushroom pizza</h8></div>
         </div>
         <div class="col-md-3" id="w4">
                 <img id="img1" width="200px" height="200px" src="images/photo-6.jpeg">
-                <div><h8>italian pizza</h8></div>
+                <div><h8>Chicken pizza/h8></div>
             </div>
     </div>
     <div class="row">
     <div class="col-md-3" id="w5">
             <img id="img1" width="200px" height="200px" src="images/photo-1.jpeg">
-            <div><h8>italian pizza</h8></div>
+            <div><h8>Regima pizza</h8></div>
         </div>
         <div class="col-md-3" id="w1">
             <img id="img1" width="200px" height="200px" src="images/images (2).jpeg">
-            <div><h8>italian pizza</h8></div>
+            <div><h8>Chicken pizza</h8></div>
             </div>
         <div class="col-md-3" id="w1">
             <img id="img1" width="200px" height="200px" src="images/photo-10.jpeg">
-            <div><h8>italian pizza</h8></div>
+            <div><h8>Tikka  pizza</h8></div>
         </div>
         <div class="col-md-3" id="w1">
             <img id="img1" width="200px" height="200px" src="images/download (3).jpeg">
@@ -255,7 +359,41 @@
     <!-- </div>
 </sectionC> -->
 <footer>
+    <br>
+    <br>
+        <div class="social">
+                <div class="col-md-2">
+                    <img height="30px" width="30px" src="https://res.cloudinary.com/drrezzrvd/image/upload/v1564074841/twitter_hmlcpv.png">
+                </div>
+                <div class="col-md-2">
+                    <img height="30px" width="30px" src="https://res.cloudinary.com/drrezzrvd/image/upload/v1564074905/dribble_hxe21i.png">
+                </div>
+                <div class="col-md-2">
+                    <img height="30px" width="30px" src="https://res.cloudinary.com/drrezzrvd/image/upload/v1564074817/facebook_joxn0k.png">
+                </div>
+                <div class="col-md-2">
+                    <img height="30px" width="30px" src="https://res.cloudinary.com/drrezzrvd/image/upload/v1564074852/g_plus_vmkjhu.png">
+                </div>
+                <div class="col-md-2">
+                    <img height="30px" width="30px"src="https://res.cloudinary.com/drrezzrvd/image/upload/v1564074852/g_plus_vmkjhu.png">
+                </div>
+                <div class="col-md-2">
+                    <img height="30px" width="30px" src="https://res.cloudinary.com/drrezzrvd/image/upload/v1564074865/stumble_upon_lvjuko.png">
+                </div>
+                <div class="col-md-2">
+                    <img height="30px" width="30px" src="https://res.cloudinary.com/drrezzrvd/image/upload/v1564075069/behance_cw7cnv.png">
+                </div>
+                <div class="col-md-2">
+                    <img height="30px" width="30px" src="https://res.cloudinary.com/drrezzrvd/image/upload/v1564074882/pinterest_vgofxc.png">
+                </div>
+                <div class="col-md-2">
+                    <img height="30px" width="30px" src="https://res.cloudinary.com/drrezzrvd/image/upload/v1564074896/flickr_ebd7us.png">
+                </div>
+
+            </div>
+            <br>
     <p>&#169;Copyright 2019</p>
+    <p>Dukunde Marie Jeanne</p>
 </footer>
         <script src="js/jquery.min.js"></script>
         <script src="js/script.js"></script> 

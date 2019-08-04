@@ -2,7 +2,7 @@ header{
     /* background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),url('https://res.cloudinary.com/drrezzrvd/image/upload/v1564580281/photo-2_pceoz5.jpg'); */
     background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),url('https://res.cloudinary.com/drrezzrvd/image/upload/v1564647418/photo-5_hsbno4.jpg');
     background-repeat:no repeat;
-    height: 590px;
+    height: 200px;
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -10,11 +10,11 @@ header{
 h1{
  text-align: right;
  text-transform: uppercase;
- font-size: 50px;
- color:white;
+ font-size: 40px;
+ color:orange;
  margin-right: 5%;
  text-align: center;
- margin-top: 22%;
+ margin-top: 5%;
  /* max-width:960px; */
  /* text-shadow: 0px 0px 4px; */
  
@@ -136,7 +136,20 @@ label{
 }
 footer{
     height:200px;
-    background-color: gray;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),url('https://res.cloudinary.com/drrezzrvd/image/upload/v1564657415/photo-6_xe18nn.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.social{
+    display: flex;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 2%;
+
+} 
+footer > p{
+    text-align: center;
+    color:white;
 }
 /* #show-your-order{
     display: none;
