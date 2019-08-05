@@ -57,7 +57,7 @@ Pizza_Orders.prototype.fullOrder=function(){
     //  return this.numberPizza1+ " " + this.favoritePizza1 ;
   return this.numberPizza1+ " " + this.favoritePizza1 + " " +this.locationPizza1;
  }
-// var ada=new Pizza_Order("small", "Italian", "1", "thin" , " rwanda");
+
 $(document).ready(function(){
     $("form#new-pizz").submit(function(event){
         event.preventDefault();
@@ -111,9 +111,9 @@ $(document).ready(function(){
    
 });
 
-Pizza_Order.prototype.fullOrder=function(){
-    return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza+ " " +this.totalPrice;
-}
+// Pizza_Order.prototype.fullOrder=function(){
+//     return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza+ " " +this.totalPrice;
+// }
 $(document).ready(function(){
     $("form#new-pizz").submit(function(event){
         event.preventDefault()
