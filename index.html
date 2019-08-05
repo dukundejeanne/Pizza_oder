@@ -137,14 +137,20 @@
                             </div>
                             <br>
                                     <div class="form-group">
-                                            <label for="new-location"><strong>your Location:</strong></label>
-                                        <input id="new-location" class="form-control new-location" type="text" placeholder="Enter your Location" style="background:transparent">
+                                            <label for="new-topping"><strong>The Toppings :</strong></label>
+                                            <select class="form-control new-topping" id="new-topping"  style="background:transparent">
+                                                    <option  id="crust">Extra cheese $5</option>
+                                                    <option  id="crust">Sausage $6</option>
+                                                    <option  id="crust">Black olives $7</option>
+                                                    <option  id="crust">Pepperoni $3</option>
+                                                    </select>
                                     </div>
                             </div>
                     </div>
                                     <br>
                                     <span class="btn btn-primary" id="add-address">Add another</span>
                                     <button type="submit" class="btn">Add</button>
+                                    <span class="btn btn-primary" id="delivery" onclick="send()">Delivery</span>
                                   </form>
                                   </div>
                                 
@@ -163,8 +169,8 @@
                                 <p><strong>Type of Pizza :<span class="pizza-type"></span></strong></p>
                                 <p><strong>Number of Pizza:<span class="pizza-number"></span></strong></p>
                                 <p><strong>Favorite  Pizza:<span class="pizza-favor"></span></strong></p>                   
-                                <p><strong>Your Location :<span class="pizza-local"></span> </strong></p>
-                                <p><strong>Total Price   <span class="total-price"></span>:</strong></p>
+                                <p><strong>The Topping :<span class="pizza-local"></span> </strong></p>
+                                <p><strong>Total Price:   <span class="total-price"></span></strong></p>
                                 
                               </div>
                                 
@@ -230,7 +236,7 @@
     <p>Dukunde Marie Jeanne</p>
 </footer>
         <script src="js/jquery.min.js"></script>
-        <script src="js/script.js"></script> 
+        
         <script src="js/order.js"></script> 
         <script src="js/bootstrap.min.js"></script>
 </body>

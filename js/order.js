@@ -1,5 +1,40 @@
 
-$(document).ready(function() {
+
+document.getElementById("delivery").addEventListener("click",function(){
+    // prompt("Enter your address");
+    alert("Your Order will be delivery at your address");
+})
+function Pizza_Order(size,tiza,number,favo,local,totalPrice){
+    this.sizePizza=size;
+    this.typePizza=tiza;
+    this.numberPizza=number;
+    this.favoritePizza=favo;
+    this.toppingPizza=local;
+    this.total=totalPrice;
+    // this.orders=[];
+
+}
+ function Pizza_Orders(size1,tiza1,number1,favo1,local1){
+    this.sizePizza1=size1;
+    this.typePizza1=tiza1;
+    this.numberPizza1=number1;
+    this.favoritePizza1=favo1;
+    this.locationPizza1=local1;
+  
+
+ }
+ Pizza_Order.prototype.fullOrder=function(){
+    return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.toppingPizza+ " " +this.totalPrice;
+}
+
+// Pizza_Order.prototype.fullOrder=function(){
+//     return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza+" "+this.orders;
+// }
+Pizza_Orders.prototype.fullOrder=function(){
+    //  return this.numberPizza1+ " " + this.favoritePizza1 ;
+  return this.numberPizza1+ " " + this.favoritePizza1 ;
+ }
+ $(document).ready(function() {
     $("#add-address").click(function() {
       $("#new-pizzas").append('<div class="new-pizza">' +
                                 
@@ -26,95 +61,53 @@ $(document).ready(function() {
                                  '</div>'
                                  );
     });
-});
-function Pizza_Order(size,tiza,number,favo,local,totalPrice){
-    this.sizePizza=size;
-    this.typePizza=tiza;
-    this.numberPizza=number;
-    this.favoritePizza=favo;
-    this.locationPizza=local;
-    this.total=totalPrice;
-    this.orders=[];
 
-}
- function Pizza_Orders(size1,tiza1,number1,favo1,local1){
-    this.sizePizza1=size1;
-    this.typePizza1=tiza1;
-    this.numberPizza1=number1;
-    this.favoritePizza1=favo1;
-    this.locationPizza1=local1;
-  
-
- }
- Pizza_Order.prototype.fullOrder=function(){
-    return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza+ " " +this.totalPrice;
-}
-
-// Pizza_Order.prototype.fullOrder=function(){
-//     return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza+" "+this.orders;
-// }
-Pizza_Orders.prototype.fullOrder=function(){
-    //  return this.numberPizza1+ " " + this.favoritePizza1 ;
-  return this.numberPizza1+ " " + this.favoritePizza1 + " " +this.locationPizza1;
- }
-
-$(document).ready(function(){
+/*$(document).ready(function(){
     $("form#new-pizz").submit(function(event){
         event.preventDefault();
         var inputtedSizePizza=$("select#new-size").val();
         var inputtedTypePizza=$("select#type").val();
         var inputtedNumberPizza=$("input#numbers").val();
         var inputtedFavoritePizza=$("select#new-crust").val();
-        var inputtedLocationPizza=$("input#new-location").val();
+        var inputtedToppingPizza=$("select#new-topping").val();
 
-         var newPizza_Order=new Pizza_Order(inputtedSizePizza,inputtedTypePizza,inputtedNumberPizza,inputtedFavoritePizza,inputtedLocationPizza);
+         var newPizza_Order=new Pizza_Order(inputtedSizePizza,inputtedTypePizza,inputtedNumberPizza,inputtedFavoritePizza,inputtedToppingPizza);
             console.log(newPizza_Order);
               $(".new-pizza").each(function(){
                 var inputtedSizePizza=$(this).find("select.newsize").val();
                 var inputtedTypePizza=$(this).find("select.newType").val();
                 var inputtedNumberPizza=$(this).find("input.new-number").val();
                 var inputtedFavoritePizza=$(this).find("select.new-crust").val(); 
-                var inputtedLocationPizza=$("input.new-location").val(); 
+                var inputtedToppingPizza=$("select.new-Topping").val(); 
 
-                var newPizza =new Pizza_Orders(inputtedSizePizza, inputtedTypePizza ,inputtedNumberPizza,inputtedFavoritePizza,inputtedLocationPizza);
+                var newPizza =new Pizza_Orders(inputtedSizePizza, inputtedTypePizza ,inputtedNumberPizza,inputtedFavoritePizza,inputtedToppingPizza);
          newPizza_Order.orders.push(newPizza);
          console.log(newPizza);
               });
             
     
     $("ul#your").append("<li><span class='contact'>" + newPizza_Order.fullOrder() + "</span></li>");            
- // $("ul#your").append("<li><span class='contact'>" + newPizza_Orders.fullOrder() + "</span></li>");
- $(".contact").last().click(function(){
-    $("#show-your-order").show();
-    //  $("#show-your-order h5").text(newPizza_Order.fullOrder());
-    $(".pizza-size").text(newPizza_Order.sizePizza);
-    $(".pizza-type").text(newPizza_Order.typePizza);
-     $(".pizza-number").text(newPizza_Order.numberPizza);
-    // $(".pizza-number1").text(newPizza_Order.numberPizza1);
-     //$(".pizza-favor").text(newPizza_Order.favoritePizza);
-     $(".pizza-favor").text(newPizza_Order.favoritePizza);
-    $(".pizza-local").text(newPizza_Order.locationPizza);
-    $(".total-price").text(newPizza_Order.totalPrice);
-    
-    $("ul#addresses").text(" ");
+ // $("ul#your").append("<li><span class='contact'>" + newPizza_Orders.fullOrder() + "</span></li>");*/
+ /*$(".contact").last().click(function(){
+   
     newPizza_Order.orders.forEach(function(address) {
         $("ul#addresses").append("<li>" + address.fullOrder()+ "</li>");
     });  
 
 });
-    });
-    $("select#new-size").val("");
-    $("select#type").val("");
-    $("input.new-number").val("");
-    $("select.new-crust").val("");
-    $("input#new-location").val("");
+    });*/
+    $("select#new-size").val(" ");
+    $("select#type").val(" ");
+    $("input.new-number").val(" ");
+    $("select.new-crust").val(" ");
+    $("select#new-topping").val(" ");
    
-});
+
 
 // Pizza_Order.prototype.fullOrder=function(){
-//     return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza+ " " +this.totalPrice;
+//     return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.toppingPizza+ " " +this.totalPrice;
 // }
-$(document).ready(function(){
+
     $("form#new-pizz").submit(function(event){
         event.preventDefault()
     });
@@ -126,10 +119,11 @@ var size=$("select#new-size").val();
 var type=$("select#type").val();
 var number=$("input#numbers").val();
 var crust=$("select#new-crust").val();
-//var location=$("input#new-location").val();
-var total=price * number;
+var topping=$("select#new-topping").val();
+ var total;
+
+
 var price=20;
-var newPiza=new Pizza_Order(size,inputtedTypePizza,inputtedNumberPizza,inputtedFavoritePizza,inputtedLocationPizza,total);
  switch(size){
      case size="Large":
      switch(type){
@@ -376,8 +370,20 @@ var newPiza=new Pizza_Order(size,inputtedTypePizza,inputtedNumberPizza,inputtedF
                                                         }
                                             break;
             }
-           
-            console.log(newPiza);
+            var newPizza_Order=new Pizza_Order(size,type,number,crust,topping,total);
+            $("#show-your-order").show();
+    //  $("#show-your-order h5").text(newPizza_Order.fullOrder());
+    $(".pizza-size").text(newPizza_Order.sizePizza);
+    $(".pizza-type").text(newPizza_Order.typePizza);
+     $(".pizza-number").text(newPizza_Order.numberPizza);
+    // $(".pizza-number1").text(newPizza_Order.numberPizza1);
+     //$(".pizza-favor").text(newPizza_Order.favoritePizza);
+     $(".pizza-favor").text(newPizza_Order.favoritePizza);
+    $(".pizza-local").text(newPizza_Order.toppingPizza);
+    $(".total-price").text(newPizza_Order.total);
+    
+    $("ul#addresses").text(" ");
+            console.log(newPizza_Order);
      
         });
     });
