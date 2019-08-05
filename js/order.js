@@ -27,12 +27,13 @@ $(document).ready(function() {
                                  );
     });
 });
-function Pizza_Order(size,tiza,number,favo,local){
+function Pizza_Order(size,tiza,number,favo,local,totalPrice){
     this.sizePizza=size;
     this.typePizza=tiza;
     this.numberPizza=number;
     this.favoritePizza=favo;
     this.locationPizza=local;
+    this.totalPrice=totalPrice;
     this.orders=[];
 
 }
@@ -46,7 +47,7 @@ function Pizza_Order(size,tiza,number,favo,local){
 
  }
  Pizza_Order.prototype.fullOrder=function(){
-    return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza;
+    return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza+ " " +this.totalPrice;
 }
 
 // Pizza_Order.prototype.fullOrder=function(){
@@ -93,6 +94,7 @@ $(document).ready(function(){
      //$(".pizza-favor").text(newPizza_Order.favoritePizza);
      $(".pizza-favor").text(newPizza_Order.favoritePizza);
     $(".pizza-local").text(newPizza_Order.locationPizza);
+    $(".total-price").text(newPizza_Order.totalPrice);
     
     $("ul#addresses").text(" ");
     newPizza_Order.orders.forEach(function(address) {
@@ -108,15 +110,300 @@ $(document).ready(function(){
     $("input#new-location").val("");
    
 });
-// switch(My-order){
-//}
+
+
+$(document).ready(function(){
+    $("form#").submit(function(event){
+        event.preventDefault()
+    });
+    $(".btn").click(function(){
+
+ 
+
+var size=$("select#new-size").val();
+var type=$("select#type").val();
+var number=$("input#numbers").val();
+var crust=$("select#new-crust").val();
+var location=$("input#new-location").val();
 var total=price * number;
 var price=20;
-var size,type,number,favorite;
-if(size=='small'&& number=='1'){
-    document.getElementById('sale').innerHTML='20$' 
 
-}
+ switch(size){
+     case size="Large":
+     switch(type){
+        case type="Italian pizza":
+            if (crust=="Thin Crust"){
+                Tprice=total+ 50;
+            }else if(crust=="Thick Crust"){
+                Tprice=total+ 40;
+            }else if(crust=="FatBread Crust"){
+                Tprice=total+ 30;
+            }else {
+                Tprice=total+ 20;
+            }
+            break;
+        case type="Vegetable pizza":
+                if (crust=="Thin Crust"){
+                    Tprice=total+ 100;
+                }else if(crust=="Thick Crust"){
+                    Tprice=total+ 110;
+                }else if(crust=="FatBread Crust"){
+                    Tprice=total+ 120;
+                }else {
+                    Tprice=total+ 130;
+                }
+            break;
+        case type="Hawaiian pizza":
+                if (crust=="Thin Crust"){
+                    Tprice=total+ 100;
+                }else if(crust=="Thick Crust"){
+                    Tprice=total+ 110;
+                }else if(crust=="FatBread Crust"){
+                    Tprice=total+ 120;
+                }else {
+                    Tprice=total+ 130;
+                }
+            break;
+        case type="Mushroom pizza":
+                    if (crust=="Thin Crust"){
+                        Tprice=total+ 100;
+                    }else if(crust=="Thick Crust"){
+                        Tprice=total+ 110;
+                    }else if(crust=="FatBread Crust"){
+                        Tprice=total+ 120;
+                    }else {
+                        Tprice=total+ 130;
+                    }
+                break;
+                case type="Mushroom pizza":
+                    if (crust=="Thin Crust"){
+                            Tprice=total+ 100;
+                    }else if(crust=="Thick Crust"){
+                            Tprice=total+ 110;
+                    }else if(crust=="FatBread Crust"){
+                            Tprice=total+ 120;
+                    }else {
+                        Tprice=total+ 130;
+                        }
+                    break;
+                    case type="Regima pizza":
+                        if (crust=="Thin Crust"){
+                                Tprice=total+ 100;
+                        }else if(crust=="Thick Crust"){
+                                Tprice=total+ 110;
+                        }else if(crust=="FatBread Crust"){
+                                Tprice=total+ 120;
+                        }else {
+                                Tprice=total+ 130;
+                            }
+                        break;
+                        case type=" Chicken Tikka pizza":
+                                if (crust=="Thin Crust"){
+                                        Tprice=total+ 100;
+                                }else if(crust=="Thick Crust"){
+                                        Tprice=total+ 110;
+                                }else if(crust=="FatBread Crust"){
+                                        Tprice=total+ 120;
+                                }else {
+                                        Tprice=total+ 130;
+                                    }
+                                break;
+                                }
+                    break;
+        case size="Small":
+            switch(type){
+                case type="Italian pizza":
+            if (crust=="Thin Crust"){
+                Tprice=total+ 10;
+            }else if(crust=="Thick Crust"){
+                Tprice=total+ 20;
+            }else if(crust=="FatBread Crust"){
+                Tprice=total+ 30;
+            }else {
+                Tprice=total+ 40;
+            }
+            break;
+        case type="Vegetable pizza":
+                if (crust=="Thin Crust"){
+                    Tprice=total+ 100;
+                }else if(crust=="Thick Crust"){
+                    Tprice=total+ 90;
+                }else if(crust=="FatBread Crust"){
+                    Tprice=total+ 80;
+                }else {
+                    Tprice=total+ 70;
+                }
+            break;
+        case type="Hawaiian pizza":
+                if (crust=="Thin Crust"){
+                    Tprice=total+ 100;
+                }else if(crust=="Thick Crust"){
+                    Tprice=total+ 110;
+                }else if(crust=="FatBread Crust"){
+                    Tprice=total+ 120;
+                }else {
+                    Tprice=total+ 130;
+                }
+            break;
+        case type="Mushroom pizza":
+                    if (crust=="Thin Crust"){
+                        Tprice=total+ 150;
+                    }else if(crust=="Thick Crust"){
+                        Tprice=total+ 160;
+                    }else if(crust=="FatBread Crust"){
+                        Tprice=total+ 170;
+                    }else {
+                        Tprice=total+ 180;
+                    }
+                break;
+                case type="Mushroom pizza":
+                    if (crust=="Thin Crust"){
+                            Tprice=total+ 100;
+                    }else if(crust=="Thick Crust"){
+                            Tprice=total+ 110;
+                    }else if(crust=="FatBread Crust"){
+                            Tprice=total+ 120;
+                    }else {
+                        Tprice=total+ 130;
+                        }
+                    break;
+                    case type="Regima pizza":
+                        if (crust=="Thin Crust"){
+                                Tprice=total+ 10;
+                        }else if(crust=="Thick Crust"){
+                                Tprice=total+ 110;
+                        }else if(crust=="FatBread Crust"){
+                                Tprice=total+ 12;
+                        }else {
+                                Tprice=total+ 13;
+                            }
+                        break;
+                        case type=" Chicken Tikka pizza":
+                                if (crust=="Thin Crust"){
+                                        Tprice=total+ 102;
+                                }else if(crust=="Thick Crust"){
+                                        Tprice=total+ 112;
+                                }else if(crust=="FatBread Crust"){
+                                        Tprice=total+ 122;
+                                }else {
+                                        Tprice=total+ 133;
+                                    }
+                                break;
+                                }
+                    break;
+
+                    case type="Medium":
+                            switch(type){
+                                case type="Italian pizza":
+                                    if (crust=="Thin Crust"){
+                                        Tprice=total+ 50;
+                                    }else if(crust=="Thick Crust"){
+                                        Tprice=total+ 40;
+                                    }else if(crust=="FatBread Crust"){
+                                        Tprice=total+ 30;
+                                    }else {
+                                        Tprice=total+ 20;
+                                    }
+                                    break;
+                                case type="Vegetable pizza":
+                                        if (crust=="Thin Crust"){
+                                            Tprice=total+ 100;
+                                        }else if(crust=="Thick Crust"){
+                                            Tprice=total+ 110;
+                                        }else if(crust=="FatBread Crust"){
+                                            Tprice=total+ 120;
+                                        }else {
+                                            Tprice=total+ 130;
+                                        }
+                                    break;
+                                case type="Hawaiian pizza":
+                                        if (crust=="Thin Crust"){
+                                            Tprice=total+ 100;
+                                        }else if(crust=="Thick Crust"){
+                                            Tprice=total+ 110;
+                                        }else if(crust=="FatBread Crust"){
+                                            Tprice=total+ 120;
+                                        }else {
+                                            Tprice=total+ 130;
+                                        }
+                                    break;
+                                case type="Mushroom pizza":
+                                            if (crust=="Thin Crust"){
+                                                Tprice=total+ 100;
+                                            }else if(crust=="Thick Crust"){
+                                                Tprice=total+ 110;
+                                            }else if(crust=="FatBread Crust"){
+                                                Tprice=total+ 120;
+                                            }else {
+                                                Tprice=total+ 130;
+                                            }
+                                        break;
+                                        case type="Mushroom pizza":
+                                            if (crust=="Thin Crust"){
+                                                    Tprice=total+ 100;
+                                            }else if(crust=="Thick Crust"){
+                                                    Tprice=total+ 110;
+                                            }else if(crust=="FatBread Crust"){
+                                                    Tprice=total+ 120;
+                                            }else {
+                                                Tprice=total+ 130;
+                                                }
+                                            break;
+                                            case type="Regima pizza":
+                                                if (crust=="Thin Crust"){
+                                                        Tprice=total+ 100;
+                                                }else if(crust=="Thick Crust"){
+                                                        Tprice=total+ 110;
+                                                }else if(crust=="FatBread Crust"){
+                                                        Tprice=total+ 120;
+                                                }else {
+                                                        Tprice=total+ 130;
+                                                    }
+                                                break;
+                                                case type=" Chicken Tikka pizza":
+                                                        if (crust=="Thin Crust"){
+                                                                Tprice=total+ 100;
+                                                        }else if(crust=="Thick Crust"){
+                                                                Tprice=total+ 110;
+                                                        }else if(crust=="FatBread Crust"){
+                                                                Tprice=total+ 120;
+                                                        }else {
+                                                                Tprice=total+ 130;
+                                                            }
+                                                        break;
+                                                        }
+                                            break;
+            }
+            var newPiza=new Pizza_Order(size,type,number,crust,location,total)
+            console.log(new Pizza_Order);
+     
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////
+
+// if(size=='small'&& number=='1'){
+//     document.getElementById('sale').innerHTML='20$' 
+
+// }
 // if(size=='small'&& number=='1'){
 //     document.getElementById('sell').innerHTML='20$' 
 //     if(type=='Italian pizza'){
