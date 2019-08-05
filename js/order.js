@@ -111,7 +111,9 @@ $(document).ready(function(){
    
 });
 
-
+Pizza_Order.prototype.fullOrder=function(){
+    return this.sizePizza + " " + this.typePizza + " " +this.numberPizza+ " " + this.favoritePizza + " " +this.locationPizza+ " " +this.totalPrice;
+}
 $(document).ready(function(){
     $("form#new-pizz").submit(function(event){
         event.preventDefault()
@@ -127,7 +129,7 @@ var crust=$("select#new-crust").val();
 //var location=$("input#new-location").val();
 var total=price * number;
 var price=20;
-
+var newPiza=new Pizza_Order(size,inputtedTypePizza,inputtedNumberPizza,inputtedFavoritePizza,inputtedLocationPizza,total);
  switch(size){
      case size="Large":
      switch(type){
@@ -374,7 +376,7 @@ var price=20;
                                                         }
                                             break;
             }
-            var newPiza=new Pizza_Order(Size,inputtedTypePizza,inputtedNumberPizza,inputtedFavoritePizza,inputtedLocationPizza,total);
+           
             console.log(newPiza);
      
         });
