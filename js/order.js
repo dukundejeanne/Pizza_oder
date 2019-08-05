@@ -33,7 +33,7 @@ function Pizza_Order(size,tiza,number,favo,local,totalPrice){
     this.numberPizza=number;
     this.favoritePizza=favo;
     this.locationPizza=local;
-    this.totalPrice=totalPrice;
+    this.total=totalPrice;
     this.orders=[];
 
 }
@@ -113,7 +113,7 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
-    $("form#").submit(function(event){
+    $("form#new-pizz").submit(function(event){
         event.preventDefault()
     });
     $(".btn").click(function(){
@@ -124,7 +124,7 @@ var size=$("select#new-size").val();
 var type=$("select#type").val();
 var number=$("input#numbers").val();
 var crust=$("select#new-crust").val();
-var location=$("input#new-location").val();
+//var location=$("input#new-location").val();
 var total=price * number;
 var price=20;
 
@@ -133,79 +133,79 @@ var price=20;
      switch(type){
         case type="Italian pizza":
             if (crust=="Thin Crust"){
-                Tprice=total+ 50;
+                total=price * number+ 50;
             }else if(crust=="Thick Crust"){
-                Tprice=total+ 40;
+                total=price * number+ 40;
             }else if(crust=="FatBread Crust"){
-                Tprice=total+ 30;
+                total=price * number+ 30;
             }else {
-                Tprice=total+ 20;
+                total=price * number + 20;
             }
             break;
         case type="Vegetable pizza":
                 if (crust=="Thin Crust"){
-                    Tprice=total+ 100;
+                    total=price * number+ 100;
                 }else if(crust=="Thick Crust"){
-                    Tprice=total+ 110;
+                    total=price * number+ 110;
                 }else if(crust=="FatBread Crust"){
-                    Tprice=total+ 120;
+                    total=price * number+ 120;
                 }else {
-                    Tprice=total+ 130;
+                    total=price * number+ 130;
                 }
             break;
         case type="Hawaiian pizza":
                 if (crust=="Thin Crust"){
-                    Tprice=total+ 100;
+                    total=price * number+ 100;
                 }else if(crust=="Thick Crust"){
-                    Tprice=total+ 110;
+                    total=price * number+ 110;
                 }else if(crust=="FatBread Crust"){
-                    Tprice=total+ 120;
+                    total=price * number+ 120;
                 }else {
-                    Tprice=total+ 130;
+                    total=price * number+ 130;
                 }
             break;
         case type="Mushroom pizza":
                     if (crust=="Thin Crust"){
-                        Tprice=total+ 100;
+                        total=price * number+ 100;
                     }else if(crust=="Thick Crust"){
-                        Tprice=total+ 110;
+                        total=price * number+ 110;
                     }else if(crust=="FatBread Crust"){
-                        Tprice=total+ 120;
+                        total=price * number+ 120;
                     }else {
-                        Tprice=total+ 130;
+                        total=price * number+ 130;
                     }
                 break;
                 case type="Mushroom pizza":
                     if (crust=="Thin Crust"){
-                            Tprice=total+ 100;
+                        total=price * number+ 100;
                     }else if(crust=="Thick Crust"){
-                            Tprice=total+ 110;
+                        total=price * number+ 110;
                     }else if(crust=="FatBread Crust"){
-                            Tprice=total+ 120;
+                        total=price * number+ 120;
                     }else {
-                        Tprice=total+ 130;
+                        total=price * number+ 130;
                         }
                     break;
                     case type="Regima pizza":
                         if (crust=="Thin Crust"){
-                                Tprice=total+ 100;
+                            total=price * number+ 100;
                         }else if(crust=="Thick Crust"){
-                                Tprice=total+ 110;
+                            total=price * number+ 110;
                         }else if(crust=="FatBread Crust"){
-                                Tprice=total+ 120;
+                            total=price * number+ 120;
                         }else {
-                                Tprice=total+ 130;
+                            total=price * number+ 130;
                             }
                         break;
                         case type=" Chicken Tikka pizza":
                                 if (crust=="Thin Crust"){
-                                        Tprice=total+ 100;
+                                    total=price * number+ 100;
                                 }else if(crust=="Thick Crust"){
-                                        Tprice=total+ 110;
+                                    total=price * number+ 110;
                                 }else if(crust=="FatBread Crust"){
-                                        Tprice=total+ 120;
+                                    total=price * number+ 120;
                                 }else {
-                                        Tprice=total+ 130;
+                                    total=price * number+ 130;
                                     }
                                 break;
                                 }
@@ -214,79 +214,79 @@ var price=20;
             switch(type){
                 case type="Italian pizza":
             if (crust=="Thin Crust"){
-                Tprice=total+ 10;
+                total=price * number+ 10;
             }else if(crust=="Thick Crust"){
-                Tprice=total+ 20;
+                total=price * number+ 20;
             }else if(crust=="FatBread Crust"){
-                Tprice=total+ 30;
+                total=price * number+ 30;
             }else {
-                Tprice=total+ 40;
+                total=price * number+ 40;
             }
             break;
         case type="Vegetable pizza":
                 if (crust=="Thin Crust"){
-                    Tprice=total+ 100;
+                    total=price * number+ 100;
                 }else if(crust=="Thick Crust"){
-                    Tprice=total+ 90;
+                    total=price * numberl+ 90;
                 }else if(crust=="FatBread Crust"){
-                    Tprice=total+ 80;
+                    total=price * number+ 80;
                 }else {
                     Tprice=total+ 70;
                 }
             break;
         case type="Hawaiian pizza":
                 if (crust=="Thin Crust"){
-                    Tprice=total+ 100;
+                    total=price * number+ 100;
                 }else if(crust=="Thick Crust"){
-                    Tprice=total+ 110;
+                    total=price * numberl+ 110;
                 }else if(crust=="FatBread Crust"){
-                    Tprice=total+ 120;
+                    total=price * number+ 120;
                 }else {
-                    Tprice=total+ 130;
+                    total=price * number+ 130;
                 }
             break;
         case type="Mushroom pizza":
                     if (crust=="Thin Crust"){
-                        Tprice=total+ 150;
+                        total=price * number+ 150;
                     }else if(crust=="Thick Crust"){
-                        Tprice=total+ 160;
+                        total=price * number+ 160;
                     }else if(crust=="FatBread Crust"){
-                        Tprice=total+ 170;
+                        total=price * number+ 170;
                     }else {
-                        Tprice=total+ 180;
+                        total=price * number+ 180;
                     }
                 break;
                 case type="Mushroom pizza":
                     if (crust=="Thin Crust"){
-                            Tprice=total+ 100;
+                        total=price * number+ 100;
                     }else if(crust=="Thick Crust"){
-                            Tprice=total+ 110;
+                        total=price * number+ 110;
                     }else if(crust=="FatBread Crust"){
-                            Tprice=total+ 120;
+                        total=price * number+ 120;
                     }else {
-                        Tprice=total+ 130;
+                        total=price * number+ 130;
                         }
                     break;
                     case type="Regima pizza":
                         if (crust=="Thin Crust"){
-                                Tprice=total+ 10;
+                            total=price * number+ 10;
                         }else if(crust=="Thick Crust"){
-                                Tprice=total+ 110;
+                            total=price * number+ 110;
                         }else if(crust=="FatBread Crust"){
-                                Tprice=total+ 12;
+                            total=price * number+ 12;
                         }else {
-                                Tprice=total+ 13;
+                            total=price * number+ 13;
                             }
                         break;
                         case type=" Chicken Tikka pizza":
                                 if (crust=="Thin Crust"){
-                                        Tprice=total+ 102;
+                                    total=price * number+ 102;
                                 }else if(crust=="Thick Crust"){
-                                        Tprice=total+ 112;
+                                    total=price * number+ 112;
                                 }else if(crust=="FatBread Crust"){
-                                        Tprice=total+ 122;
+                                    total=price * number+ 122;
                                 }else {
-                                        Tprice=total+ 133;
+                                    total=price * number+ 133;
                                     }
                                 break;
                                 }
@@ -296,86 +296,86 @@ var price=20;
                             switch(type){
                                 case type="Italian pizza":
                                     if (crust=="Thin Crust"){
-                                        Tprice=total+ 50;
+                                        total=price * number+ 50;
                                     }else if(crust=="Thick Crust"){
-                                        Tprice=total+ 40;
+                                        total=price * number+ 40;
                                     }else if(crust=="FatBread Crust"){
-                                        Tprice=total+ 30;
+                                        total=price * number+ 30;
                                     }else {
-                                        Tprice=total+ 20;
+                                        total=price * number+ 20;
                                     }
                                     break;
                                 case type="Vegetable pizza":
                                         if (crust=="Thin Crust"){
-                                            Tprice=total+ 100;
+                                            total=price * number+ 100;
                                         }else if(crust=="Thick Crust"){
-                                            Tprice=total+ 110;
+                                            total=price * number+ 110;
                                         }else if(crust=="FatBread Crust"){
-                                            Tprice=total+ 120;
+                                            total=price * number+ 120;
                                         }else {
-                                            Tprice=total+ 130;
+                                            total=price * number+ 130;
                                         }
                                     break;
                                 case type="Hawaiian pizza":
                                         if (crust=="Thin Crust"){
-                                            Tprice=total+ 100;
+                                            total=price * number+ 100;
                                         }else if(crust=="Thick Crust"){
-                                            Tprice=total+ 110;
+                                            total=price * number+ 110;
                                         }else if(crust=="FatBread Crust"){
-                                            Tprice=total+ 120;
+                                            total=price * number+ 120;
                                         }else {
-                                            Tprice=total+ 130;
+                                            total=price * number+ 130;
                                         }
                                     break;
                                 case type="Mushroom pizza":
                                             if (crust=="Thin Crust"){
-                                                Tprice=total+ 100;
+                                                total=price * number+ 100;
                                             }else if(crust=="Thick Crust"){
-                                                Tprice=total+ 110;
+                                                total=price * number+ 110;
                                             }else if(crust=="FatBread Crust"){
-                                                Tprice=total+ 120;
+                                                total=price * number+ 120;
                                             }else {
-                                                Tprice=total+ 130;
+                                                total=price * number+ 130;
                                             }
                                         break;
                                         case type="Mushroom pizza":
                                             if (crust=="Thin Crust"){
-                                                    Tprice=total+ 100;
+                                                total=price * number+ 100;
                                             }else if(crust=="Thick Crust"){
-                                                    Tprice=total+ 110;
+                                                total=price * number+ 110;
                                             }else if(crust=="FatBread Crust"){
-                                                    Tprice=total+ 120;
+                                                total=price * number+ 120;
                                             }else {
-                                                Tprice=total+ 130;
+                                                total=price * number+ 130;
                                                 }
                                             break;
                                             case type="Regima pizza":
                                                 if (crust=="Thin Crust"){
-                                                        Tprice=total+ 100;
+                                                    total=price * number+ 100;
                                                 }else if(crust=="Thick Crust"){
-                                                        Tprice=total+ 110;
+                                                    total=price * number+ 110;
                                                 }else if(crust=="FatBread Crust"){
-                                                        Tprice=total+ 120;
+                                                    total=price * number+ 120;
                                                 }else {
-                                                        Tprice=total+ 130;
+                                                    total=price * number+ 130;
                                                     }
                                                 break;
                                                 case type=" Chicken Tikka pizza":
                                                         if (crust=="Thin Crust"){
-                                                                Tprice=total+ 100;
+                                                            total=price * number+ 100;
                                                         }else if(crust=="Thick Crust"){
-                                                                Tprice=total+ 110;
+                                                            total=price * number+ 110;
                                                         }else if(crust=="FatBread Crust"){
-                                                                Tprice=total+ 120;
+                                                            total=price * number+ 120;
                                                         }else {
-                                                                Tprice=total+ 130;
+                                                            total=price * number+ 130;
                                                             }
                                                         break;
                                                         }
                                             break;
             }
-            var newPiza=new Pizza_Order(size,type,number,crust,location,total)
-            console.log(new Pizza_Order);
+            var newPiza=new Pizza_Order(Size,inputtedTypePizza,inputtedNumberPizza,inputtedFavoritePizza,inputtedLocationPizza,total);
+            console.log(newPiza);
      
         });
     });
